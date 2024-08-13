@@ -1,6 +1,6 @@
 import "./post.css";
 import { MoreVert } from "@mui/icons-material";
-import { Users } from "../../dummyData";
+import { Users } from "../../../public/dummyData";
 import { useState } from "react";
 
 export default function Post({ post }) {
@@ -19,7 +19,7 @@ export default function Post({ post }) {
             <img
               className="postProfileImg"
               src={Users.filter((u) => u.id === post?.userId)[0].profilePicture}
-              alt=""
+              alt="postImage.png"
             />
             <span className="postUsername">
               {Users.filter((u) => u.id === post?.userId)[0].username}
@@ -31,7 +31,7 @@ export default function Post({ post }) {
           </div>
         </div>
         <div className="postCenter">
-          <span className="postText">{post?.desc}</span>
+          <span className="postText">{post?.desc}</span> {/* post ? because some area did not define desc */}
           <img className="postImg" src={post.photo} alt="" />
         </div>
         <div className="postBottom">
@@ -48,7 +48,7 @@ export default function Post({ post }) {
               onClick={likeHandler}
               alt=""
             />
-            <span className="postLikeCounter">{like} people like it</span>
+            <span className="postLikeCounter">{post.like} people like it</span>
           </div>
           <div className="postBottomRight">
             <span className="postCommentText">{post.comment} comments</span>

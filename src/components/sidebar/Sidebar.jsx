@@ -10,7 +10,7 @@ import {
   Event,
   School,
 } from "@mui/icons-material";
-import { Users } from "../../dummyData";
+import { Users} from "../../../public/dummyData";
 import CloseFriend from "../closeFriend/CloseFriend";
 
 export default function Sidebar() {
